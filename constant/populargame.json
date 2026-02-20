@@ -1,0 +1,60 @@
+{
+  "popularGames": {
+    "title": {
+      "part1": "Popular",
+      "part2": "Games"
+    },
+    "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    "button": {
+      "text": "Explore more",
+      "href": "#"
+    },
+    "games": [
+      {
+        "id": 1,
+        "name": "Fortnite",
+        "coverImage": "/PopularGame/Rectangle 33.png",
+        "time": "IN 35 MINUTES, 23:00",
+        "region": "Europe",
+        "matchType": "5v5",
+        "price": "€60.00",
+        "slots": "64 slots"
+      },
+      {
+        "id": 2,
+        "name": "Minecraft",
+        "coverImage": "/PopularGame/Rectangle 34.png",
+        "time": "IN 35 MINUTES, 23:00",
+        "region": "Europe",
+        "matchType": "5v5",
+        "price": "€60.00",
+        "slots": "64 slots"
+      },
+      {
+        "id": 3,
+        "name": "COD",
+        "coverImage": "/PopularGame/Rectangle 35.png",
+        "time": "IN 35 MINUTES, 23:00",
+        "region": "Europe",
+        "matchType": "5v5",
+        "price": "€60.00",
+        "slots": "64 slots"
+      },
+      {
+        "id": 4,
+        "name": "Fifa 22",
+        "coverImage": "/PopularGame/Rectangle 36.png",
+        "time": "IN 35 MINUTES, 23:00",
+        "region": "Europe",
+        "matchType": "5v5",
+        "price": "€60.00",
+        "slots": "64 slots"
+      }
+      
+    ],
+    "characterImage": {
+      "src": "/Image/PopularGames/fortnite-character.png",
+      "alt": "Fortnite Character"
+    }
+  }
+}

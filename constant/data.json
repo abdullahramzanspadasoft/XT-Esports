@@ -1,0 +1,120 @@
+{
+  "navbar": {
+    "items": [
+      {
+        "id": 1,
+        "icon": "home",
+        "label": "Home",
+        "active": true,
+        "hasDropdown": false
+      },
+      {
+        "id": 2,
+        "icon": "star",
+        "label": "Features",
+        "active": false,
+        "hasDropdown": false
+      },
+      {
+        "id": 3,
+        "icon": "gamepad",
+        "label": "Games",
+        "active": false,
+        "hasDropdown": false
+      },
+      {
+        "id": 4,
+        "icon": "rocket",
+        "label": "Spaces",
+        "active": false,
+        "hasDropdown": false
+      },
+      {
+        "id": 5,
+        "icon": "cart",
+        "label": "Marketplace",
+        "active": false,
+        "hasDropdown": false
+      },
+      {
+        "id": 6,
+        "icon": "grid",
+        "label": "Organizers",
+        "active": false,
+        "hasDropdown": false
+      },
+      {
+        "id": 7,
+        "icon": "globe",
+        "label": "Tournaments",
+        "active": false,
+        "hasDropdown": false
+      },
+      {
+        "id": 8,
+        "icon": "trophy",
+        "label": "Leaderboard",
+        "active": false,
+        "hasDropdown": false
+      },
+      {
+        "id": 9,
+        "icon": "more",
+        "label": "More",
+        "active": false,
+        "hasDropdown": true
+      },
+      {
+        "id": 10,
+        "icon": "bell",
+        "label": "",
+        "active": false,
+        "hasDropdown": false
+      }
+    ],
+    "brand": {
+      "namePart1": "XT",
+      "namePart2": "Esports",
+      "logo": "X"
+    },
+    "rightSide": {
+      "notification": {
+        "enabled": true,
+        "hasUnread": true
+      },
+      "button": {
+        "text": "Be a Member"
+      }
+    }
+  },
+  "hero": {
+    "title": {
+      "line1": "Let's begin",
+      "line2": "The virtual",
+      "line2Highlight": "War !"
+    },
+    "subtitle": "On XT Esports",
+    "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    "button": {
+      "text": "Let's Start",
+      "href": "#"
+    },
+    "socialLinks": [
+      {
+        "name": "Facebook",
+        "href": "#",
+        "icon": "facebook"
+      },
+      {
+        "name": "Twitter",
+        "href": "#",
+        "icon": "twitter"
+      },
+      {
+        "name": "Discord",
+        "href": "#",
+        "icon": "discord"
+      }
+    ]
+  }
+}
