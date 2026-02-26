@@ -13,7 +13,7 @@
       {
         "id": 1,
         "name": "Fortnite",
-        "coverImage": "/PopularGame/Rectangle 33.png",
+        "coverImage": "/Image/Hero/PopularGame/Fortnite.png",
         "time": "IN 35 MINUTES, 23:00",
         "region": "Europe",
         "matchType": "5v5",
@@ -23,7 +23,7 @@
       {
         "id": 2,
         "name": "Minecraft",
-        "coverImage": "/PopularGame/Rectangle 34.png",
+        "coverImage": "/Image/Hero/PopularGame/Minecaraft.png",
         "time": "IN 35 MINUTES, 23:00",
         "region": "Europe",
         "matchType": "5v5",
@@ -33,7 +33,7 @@
       {
         "id": 3,
         "name": "COD",
-        "coverImage": "/PopularGame/Rectangle 35.png",
+        "coverImage": "/Image/Hero/PopularGame/COD.png",
         "time": "IN 35 MINUTES, 23:00",
         "region": "Europe",
         "matchType": "5v5",
@@ -43,7 +43,7 @@
       {
         "id": 4,
         "name": "Fifa 22",
-        "coverImage": "/PopularGame/Rectangle 36.png",
+        "coverImage": "/Image/Hero/PopularGame/Fifa.png",
         "time": "IN 35 MINUTES, 23:00",
         "region": "Europe",
         "matchType": "5v5",

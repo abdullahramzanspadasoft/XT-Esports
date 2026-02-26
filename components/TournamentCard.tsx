@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { PopularGameCardProps } from "@/types/populargame";
 
-const PopularGameCard = ({
+const TournamentCard = ({
   name,
   coverImage,
   time,
@@ -13,7 +13,10 @@ const PopularGameCard = ({
   height,
 }: PopularGameCardProps) => {
   return (
-    <div className="shrink-0" style={{ width }}>
+    <div
+      className="shrink-0 transition-transform duration-300 ease-in-out hover:-translate-y-4"
+      style={{ width }}
+    >
       <div
         className="relative w-full rounded-xl overflow-hidden mb-4 shadow-2xl"
         style={{ height }}
@@ -37,4 +40,4 @@ const PopularGameCard = ({
   );
 };
 
-export default PopularGameCard;
+export default TournamentCard;

@@ -1,0 +1,59 @@
+{
+  "popularTournaments": {
+    "title": {
+      "part1": "Popular",
+      "part2": "Tournaments"
+    },
+    "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    "button": {
+      "text": "Explore more",
+      "href": "#"
+    },
+    "tournaments": [
+      {
+        "id": 1,
+        "name": "COD CHAMPIONSHIP",
+        "coverImage": "/PopularTournament/Rectangle 51.png",
+        "time": "IN 35 MINUTES, 23:00",
+        "region": "Europe",
+        "matchType": "5v5",
+        "price": "€60.00",
+        "slots": "64 slots"
+      },
+      {
+        "id": 2,
+        "name": "COD CHAMPIONSHIP",
+        "coverImage": "/PopularTournament/Rectangle 51.png",
+        "time": "IN 35 MINUTES, 23:00",
+        "region": "Europe",
+        "matchType": "5v5",
+        "price": "€60.00",
+        "slots": "64 slots"
+      },
+      {
+        "id": 3,
+        "name": "COD CHAMPIONSHIP",
+        "coverImage": "/PopularTournament/Rectangle 52.png",
+        "time": "IN 35 MINUTES, 23:00",
+        "region": "Europe",
+        "matchType": "5v5",
+        "price": "€60.00",
+        "slots": "64 slots"
+      },
+      {
+        "id": 4,
+        "name": "COD CHAMPIONSHIP",
+        "coverImage": "/PopularTournament/Rectangle 53.png",
+        "time": "IN 35 MINUTES, 23:00",
+        "region": "Europe",
+        "matchType": "5v5",
+        "price": "€60.00",
+        "slots": "64 slots"
+      }
+    ],
+    "characterImage": {
+      "src": "/Image/PopularGames/fortnite-character.png",
+      "alt": "Tournament Character"
+    }
+  }
+}

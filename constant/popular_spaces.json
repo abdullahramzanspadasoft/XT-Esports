@@ -1,0 +1,60 @@
+{
+  "popularSpaces": {
+    "title": {
+      "part1": "Popular",
+      "part2": "Spaces"
+    },
+    "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    "spaces": [
+      {
+        "id": 1,
+        "logo": "/PopularSpaces/paint-logo.png",
+        "image": "/Image/PopularSpace/Rectangle 56.png",
+        "title": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit",
+        "backgroundColor": "#FFFFFF"
+      },
+      {
+        "id": 2,
+        "logo": "/PopularSpaces/c-logo.png",
+        "image": "/Image/PopularSpace/Rectangle 57.png",
+        "title": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit",
+        "backgroundColor": "#1A1F2E"
+      },
+      {
+        "id": 3,
+        "logo": "/PopularSpaces/sushi-logo.png",
+        "image": "/Image/PopularSpace/Rectangle 58.png",
+        "title": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit",
+        "backgroundColor": "#FFFFFF"
+      },
+      {
+        "id": 4,
+        "logo": "/PopularSpaces/tyme-logo.png",
+        "image": "/Image/PopularSpace/Rectangle 59.png",
+        "title": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit",
+        "backgroundColor": "#FFFFFF"
+      },
+      {
+        "id": 5,
+        "logo": "/PopularSpaces/b-logo.png",
+        "image": "/Image/PopularSpace/Rectangle 60.png",
+        "title": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit",
+        "backgroundColor": "#F5F0E8"
+      },
+      {
+        "id": 6,
+        "logo": "/PopularSpaces/logo-6.png",
+        "image": "/Image/PopularSpace/Rectangle 59.png",
+
+        "title": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit",
+        "backgroundColor": "#1A1F2E"
+      }
+    ]
+  }
+}

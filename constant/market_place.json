@@ -1,0 +1,66 @@
+{
+  "marketplace": {
+    "title": {
+      "part1": "Explore",
+      "part2": "Marketplace"
+    },
+    "products": [
+      {
+        "id": 1,
+        "image": "/MarketPlace/overlay-1.png",
+        "title": "Overlays",
+        "price": "$30.0",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 2,
+        "image": "/MarketPlace/overlay-2.png",
+        "title": "Overlays",
+        "price": "$30.0",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 3,
+        "image": "/MarketPlace/Rectangle 63.png",
+        "title": "Overlays",
+        "price": "$30.0",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 4,
+        "image": "/MarketPlace/overlay-4.png",
+        "title": "Overlays",
+        "price": "$30.0",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 5,
+        "image": "/MarketPlace/overlay-5.png",
+        "title": "Overlays",
+        "price": "$30.0",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 6,
+        "image": "/MarketPlace/overlay-6.png",
+        "title": "Overlays",
+        "price": "$30.0",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 7,
+        "image": "/MarketPlace/overlay-7.png",
+        "title": "Overlays",
+        "price": "$30.0",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 8,
+        "image": "/MarketPlace/overlay-8.png",
+        "title": "Overlays",
+        "price": "$30.0",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      }
+    ]
+  }
+}

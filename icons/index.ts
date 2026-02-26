@@ -20,3 +20,8 @@ export { default as ArrowRightIcon } from './ArrowRightIcon';
 export { default as ChevronLeftIcon } from './ChevronLeftIcon';
 export { default as ChevronRightIcon } from './ChevronRightIcon';
 export { default as RightArrowIcon } from './RightArrowIcon';
+export { default as CarouselLeftArrowIcon } from './CarouselLeftArrowIcon';
+export { default as CarouselRightArrowIcon } from './CarouselRightArrowIcon';
+export { default as CheckmarkIcon } from './CheckmarkIcon';
+export { default as TickIcon } from './TickIcon';
+export { default as PlusIcon } from './PlusIcon';
