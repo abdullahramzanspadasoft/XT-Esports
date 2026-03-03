@@ -65,7 +65,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="pt-[8px] sm:pt-[10px] md:pt-[20px] 2xl:pt-[35px] px-[8px] sm:px-[10px] md:px-[20px] 2xl:px-[61px] max-[375px]:px-[12px] max-[320px]:px-[10px] z-50 w-full absolute">
-        <div className="bg-[#091B34] py-[8px] sm:py-[12px] 2xl:py-[20px] px-[12px] sm:px-[16px] md:px-[25px] min-[1400px]:px-[40px] 2xl:pl-[107px] 2xl:pr-[68px] rounded-bl-[100px] sm:rounded-bl-[200px] rounded-br-[100px] sm:rounded-br-[200px] w-full relative max-w-[1980px] mx-auto transition-all duration-300">
+        <div className="bg-[#091B34] py-[8px] sm:py-[12px] 2xl:py-[20px] px-6 sm:px-10 md:px-[25px] min-[1400px]:px-[40px] 2xl:pl-[107px] 2xl:pr-[68px] rounded-bl-[100px] sm:rounded-bl-[200px] rounded-br-[100px] sm:rounded-br-[200px] w-full relative max-w-[1980px] mx-auto transition-all duration-300">
           <div
             className="left-1/2 -translate-x-1/2 absolute bottom-0 h-[2px] md:h-[3px] 2xl:h-[6px] w-[70%] md:w-[630px] rounded-[100%] z-0"
             style={{
