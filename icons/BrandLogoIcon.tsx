@@ -1,5 +1,8 @@
-const BrandLogoIcon = () => (
+import { SVGProps } from "react";
+
+const BrandLogoIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
+    {...props}
     width="235"
     height="59"
     viewBox="0 0 235 59"

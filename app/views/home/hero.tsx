@@ -18,12 +18,8 @@ const Hero = () => {
   const { hero } = heroData;
 
   return (
-    <section
-      className="relative z-0 w-full overflow-hidden
-      min-h-screen
-      xl:h-screen xl:pt-[194px] xl:pb-0
-    "
-    >
+    <section className="relative z-0 w-full overflow-hidden min-h-screen xl:h-screen xl:pt-[194px] xl:pb-0">
+      {/* Background Image */}
       <Image
         src={HeroImage}
         alt="XT Esports Hero"
@@ -34,6 +30,7 @@ const Hero = () => {
 
       <div className="absolute inset-0 z-10 bg-[#011425]/99" />
 
+      {/* DESKTOP ASSETS */}
       <Image
         src={BlacImage}
         alt="Black Background"
@@ -52,39 +49,29 @@ const Hero = () => {
         className="hidden xl:block absolute z-20 top-[35px] left-[203px] w-[1726px] h-[971px]"
       />
 
-      <div className="hidden xl:block absolute z-30 top-[256px] left-[168px] w-[8px] h-[186px]">
-        <VerticalLineIcon />
-      </div>
-      <div className="hidden xl:block absolute z-30 top-[500px] left-[159px]">
-        <FacebookIcon />
-      </div>
-      <div className="hidden xl:block absolute z-30 top-[550px] left-[153px] w-[30px] h-[25px] opacity-100">
-        <TwitterIcon />
-      </div>
-      <div className="hidden xl:block absolute z-30 top-[599px] left-[155px]">
-        <DiscordIcon />
-      </div>
-      <div className="hidden xl:block absolute z-30 top-[692px] left-[168px] w-[8px] h-[186px]">
-        <VerticalLineBottomIcon />
+      <div className="hidden 2xl:block">
+        <div className="absolute z-30 top-[256px] left-[168px] w-[8px] h-[186px]">
+          <VerticalLineIcon />
+        </div>
+        <div className="absolute z-30 top-[500px] left-[159px]">
+          <FacebookIcon />
+        </div>
+        <div className="absolute z-30 top-[550px] left-[153px] w-[30px] h-[25px]">
+          <TwitterIcon />
+        </div>
+        <div className="absolute z-30 top-[599px] left-[155px]">
+          <DiscordIcon />
+        </div>
+        <div className="absolute z-30 top-[692px] left-[168px] w-[8px] h-[186px]">
+          <VerticalLineBottomIcon />
+        </div>
       </div>
 
       <div className="xl:hidden relative z-30 flex flex-col min-h-screen">
-        <div
-          className="flex flex-col items-center text-center px-5 sm:px-8 md:px-12 lg:px-16
-          pt-[130px] sm:pt-[150px] md:pt-[170px] lg:pt-[200px]
-          pb-0
-          gap-3 sm:gap-4 md:gap-5 lg:gap-6
-        "
-        >
+        <div className="flex flex-col items-center text-center px-4 xs:px-5 sm:px-8 md:px-12 lg:px-16 pt-[110px] xs:pt-[120px] sm:pt-[140px] md:pt-[160px] lg:pt-[190px] gap-4">
           <h1
             style={{ fontFamily: "var(--font-roboto)" }}
-            className="
-              font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]
-              text-[36px] leading-[1.12]
-              sm:text-[52px]
-              md:text-[64px]
-              lg:text-[80px]
-            "
+            className="font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] text-[28px] xs:text-[34px] sm:text-[50px] md:text-[62px] lg:text-[78px] leading-[1.1]"
           >
             {hero.title.line1}
             <br />
@@ -95,55 +82,32 @@ const Hero = () => {
               </span>
             </span>
           </h1>
-
-          <p
-            className="
-              font-['Poppins'] font-bold text-[#009FFF]
-              text-[17px]
-              sm:text-[24px]
-              md:text-[28px]
-              lg:text-[34px]
-            "
-          >
+          <p className="font-['Poppins'] font-bold text-[#009FFF] text-[14px] xs:text-[16px] sm:text-[22px] md:text-[26px] lg:text-[32px]">
             {hero.subtitle}
           </p>
-
-          <p
-            className="
-              font-poppins font-normal text-white
-              max-w-[300px] sm:max-w-[480px] md:max-w-[600px] lg:max-w-[740px]
-              text-[12px]
-              sm:text-[16px]
-              md:text-[18px]
-              lg:text-[21px]
-            "
-          >
+          <p className="font-poppins font-normal text-white max-w-[260px] xs:max-w-[300px] sm:max-w-[460px] md:max-w-[580px] lg:max-w-[720px] text-[11px] xs:text-[12px] sm:text-[15px] md:text-[17px] lg:text-[20px]">
             {hero.description}
           </p>
 
           <a
             href={hero.button.href}
-            className="
-              inline-flex items-center justify-center gap-2 font-inter text-[#0185EB] group
-              text-[14px]
-              sm:text-[18px]
-              md:text-[21px]
-              lg:text-[25px]
-            "
+            className="inline-flex items-center justify-center gap-2 font-inter text-[#0185EB] group transition-all duration-300 hover:scale-105 text-[12px] xs:text-[13px] sm:text-[17px] md:text-[20px] lg:text-[24px] mt-2"
           >
             {hero.button.text}
-            <ArrowRightIcon />
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
+              <ArrowRightIcon />
+            </span>
           </a>
 
-          <div className="flex items-center justify-center gap-4 mt-1">
-            <span className="w-[14px] h-[14px] flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity">
-              <FacebookIcon />
+          <div className="flex items-center justify-center gap-8 mt-10">
+            <span className="opacity-80 hover:opacity-100 transition-all cursor-pointer transform hover:scale-110">
+              <FacebookIcon className="w-6 h-6 md:w-8 md:h-8" />
             </span>
-            <span className="w-[14px] h-[14px] flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity">
-              <TwitterIcon />
+            <span className="opacity-80 hover:opacity-100 transition-all cursor-pointer transform hover:scale-110">
+              <TwitterIcon className="w-6 h-6 md:w-8 md:h-8" />
             </span>
-            <span className="w-[14px] h-[14px] flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity">
-              <DiscordIcon />
+            <span className="opacity-80 hover:opacity-100 transition-all cursor-pointer transform hover:scale-110">
+              <DiscordIcon className="w-6 h-6 md:w-8 md:h-8" />
             </span>
           </div>
         </div>
@@ -178,7 +142,7 @@ const Hero = () => {
               </span>
             </h1>
 
-            <p className="font-['Poppins'] font-bold text-[36.54px] leading-[100%] tracking-[0%] text-[#009FFF] w-[256px] h-[55px] mt-[25.5px]">
+            <p className="font-['Poppins'] font-bold text-[36.54px] text-[#009FFF] mt-[25.5px]">
               {hero.subtitle}
             </p>
 
@@ -188,15 +152,23 @@ const Hero = () => {
 
             <a
               href={hero.button.href}
-              className="
-    inline-flex items-center gap-3 font-inter text-[27.89px] text-[#0185EB] 
-    group transition-transform duration-300 ease-in-out
-    hover:text-[#0056b3] hover:scale-105 hover:translate-x-2
-  "
+              className="inline-flex items-center gap-3 font-inter text-[27.89px] text-[#0185EB] group transition-all duration-300 hover:translate-x-2"
             >
               {hero.button.text}
               <ArrowRightIcon className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
+
+            <div className="flex 2xl:hidden items-center gap-10 mt-14">
+              <span className="opacity-80 hover:opacity-100 transition-all cursor-pointer transform hover:scale-110">
+                <FacebookIcon className="w-9 h-9" />
+              </span>
+              <span className="opacity-80 hover:opacity-100 transition-all cursor-pointer transform hover:scale-110">
+                <TwitterIcon className="w-9 h-9" />
+              </span>
+              <span className="opacity-80 hover:opacity-100 transition-all cursor-pointer transform hover:scale-110">
+                <DiscordIcon className="w-9 h-9" />
+              </span>
+            </div>
           </div>
         </div>
       </div>

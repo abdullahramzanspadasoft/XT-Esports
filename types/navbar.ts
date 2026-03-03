@@ -4,6 +4,7 @@ export type NavbarItem = {
   label: string;
   active: boolean;
   hasDropdown: boolean;
+  children?: { label: string }[];
 };
 
 export type NavbarBrand = {

@@ -16,6 +16,7 @@ export default function Home() {
       <PopularGame />
       <PopularTournaments />
       <InviteAndEarn />
+
       <PopularSpaces />
       <MarketPlace />
       <XtEsportsBanner />

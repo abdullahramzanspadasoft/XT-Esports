@@ -105,17 +105,21 @@ const MarketPlace = () => {
 
                 <div className="flex items-end justify-between mt-auto pb-4 sm:pb-6 gap-3">
                   <p
-                    className="leading-[16px] mb-[12px] flex-1 min-w-0"
+                    className="mb-[12px] flex-1 min-w-0 overflow-hidden break-words"
                     style={{
                       fontFamily: "Poppins",
                       fontWeight: 500,
                       fontSize: "clamp(10px, 1vw, 12.21px)",
                       lineHeight: "16px",
                       color: "#036CB9",
+                      whiteSpace: "pre-wrap",
+                      wordBreak: "break-word",
+                      overflowWrap: "break-word",
+                      maxWidth: "100%",
                     }}
                   >
                     {product.description ||
-                      "Amet minim mollit non deserunt ullamco est sit"}
+                      "Amet minim mollit non  deserunt ullamco est sit"}
                   </p>
 
                   <button
