@@ -1,0 +1,16 @@
+{
+  "popularSpace": [
+    "/Image/PopularSpace/popular-space-card-thumb-02.png",
+    "/Image/PopularSpace/popular-space-card-thumb-05.png",
+    "/Image/PopularSpace/popular-space-card-thumb-04.png",
+    "/Image/PopularSpace/popular-space-card-thumb-03.png",
+    "/Image/PopularSpace/popular-space-card-thumb-01.png",
+    "/Image/PopularSpace/popular-space-card-thumb-wide.png"
+  ],
+  "backgroundImages": [
+    "/Image/space/space-hero-bg-assassins.png",
+    "/Image/space/space-hero-bg-dark-souls.png",
+    "/Image/space/space-hero-bg-the-last-of-us.png",
+    "/Image/space/space-hero-bg-scene-alt.png"
+  ]
+}

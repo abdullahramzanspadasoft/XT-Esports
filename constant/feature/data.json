@@ -1,0 +1,34 @@
+{
+    "hero": {
+        "headingLine1": "Getting started with",
+        "headingLine2": "esports has never",
+        "headingLine3": "been easier.",
+        "body": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+        "cta": "Try XT Esports"
+    },
+    "sections": {
+        "createTeams": {
+            "heading": "Create Teams",
+            "body": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+        },
+        "createTournaments": {
+            "heading": "Create Tournaments",
+            "body": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+        },
+        "createSpaces": {
+            "heading": "Create Spaces",
+            "body": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+        },
+        "createMarketListing": {
+            "heading": "Create Market Listing",
+            "body": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+        }
+    },
+    "getStarted": {
+        "heading": "Get Started",
+        "body": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    },
+    "bottomSection": {
+        "body": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    }
+}

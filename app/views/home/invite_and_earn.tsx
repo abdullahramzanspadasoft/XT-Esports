@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import InviteAndEarnImage from "@/public/Image/InviteAndEarn/invite_and_earn.png";
+import InviteAndEarnImage from "@/public/Image/InviteAndEarn/invite-and-earn-hero-banner.png";
 import { RightArrowIcon } from "@/icons";
 import inviteAndEarnData from "@/constant/invite_and_earn.json";
-import baground from "@/public/Image/PopularTournament/Rectangle 55.png";
+import baground from "@/public/Image/PopularTournament/popular-tournament-marquee-background.png";
 
 const InviteAndEarn = () => {
   const { inviteAndEarn } = inviteAndEarnData;
@@ -169,67 +169,64 @@ const InviteAndEarn = () => {
         </div>
       </section>
 
-      <section className="lg:hidden relative z-10 w-full flex flex-col items-center px-4 py-12 gap-6">
-        <div className="relative w-full max-w-[480px] aspect-[1920/1013] rounded-2xl overflow-hidden">
+      <section className="lg:hidden relative z-10 w-full flex flex-col items-center px-4 py-12 sm:py-20 mt-[10px]">
+        <div className="relative w-full max-w-[480px] min-[701px]:max-w-[1100px] aspect-[1/1.4] min-[701px]:aspect-[2/1] rounded-2xl overflow-hidden shadow-2xl">
           <Image
             src={InviteAndEarnImage}
             alt="Invite and Earn"
             fill
             priority
-            className="object-cover"
-            sizes="(max-width: 480px) 100vw, 480px"
+            className="object-cover object-top"
+            sizes="(max-width: 480px) 100vw, (max-width: 1100px) 90vw, 1100px"
           />
-        </div>
 
-        <div
-          className="flex flex-col items-center text-center w-full max-w-[480px] box-border overflow-hidden"
-          style={{ gap: "clamp(8px, 2.5vw, 16px)", minWidth: 0 }}
-        >
-          <h2 className="w-full m-0" style={{ minWidth: 0 }}>
-            <span
-              className="font-['Poppins'] font-bold leading-[110%] tracking-tight text-white block w-full"
+          <div
+            className="absolute inset-0 z-20 flex flex-col items-start justify-center text-left p-6 sm:p-12 min-[701px]:pl-24 min-[701px]:pt-24"
+            style={{ gap: "clamp(6px, 1.5vw, 12px)" }}
+          >
+            <h2 className="w-full m-0">
+              <span
+                className="font-['Poppins'] font-bold leading-[105%] tracking-tighter text-white block w-full"
+                style={{
+                  fontSize: "clamp(18px, 6vw, 56px)",
+                  wordBreak: "break-word",
+                  overflowWrap: "break-word",
+                }}
+              >
+                {inviteAndEarn.title.part1}
+              </span>
+            </h2>
+
+            <p
+              className="font-['Poppins'] font-medium leading-[1.3] text-white/90 w-full m-0 max-w-[280px] min-[701px]:max-w-[550px]"
               style={{
-                fontSize: "clamp(14px, 6vw, 48px)",
+                fontSize: "clamp(10px, 2.8vw, 20px)",
                 wordBreak: "break-word",
                 overflowWrap: "break-word",
-                hyphens: "auto",
+                letterSpacing: "-0.01em",
               }}
             >
-              {inviteAndEarn.title.part1}
-            </span>
-          </h2>
+              {inviteAndEarn.description}
+            </p>
 
-          <p
-            className="font-['Poppins'] font-medium leading-[1.5] text-white opacity-90 w-full m-0"
-            style={{
-              fontSize: "clamp(10px, 3vw, 17px)",
-              wordBreak: "break-word",
-              overflowWrap: "break-word",
-              minWidth: 0,
-            }}
-          >
-            {inviteAndEarn.description}
-          </p>
-
-          <a
-            href={inviteAndEarn.button.href}
-            className="inline-flex items-center justify-center text-white transition-all duration-300 shadow-lg hover:brightness-110
-            bg-[linear-gradient(116.09deg,#0185EB_0%,#00599E_100%)]
-            rounded-tl-[100px] rounded-br-[100px]
-            font-['Poppins'] font-normal"
-            style={{
-              fontSize: "clamp(10px, 3.2vw, 18px)",
-              height: "clamp(36px, 10vw, 64px)",
-              padding: "0 clamp(10px, 3.5vw, 24px)",
-              gap: "clamp(4px, 1.5vw, 12px)",
-              maxWidth: "100%",
-              flexShrink: 0,
-              whiteSpace: "nowrap",
-            }}
-          >
-            <span>{inviteAndEarn.button.text}</span>
-            <RightArrowIcon />
-          </a>
+            <a
+              href={inviteAndEarn.button.href}
+              className="inline-flex items-center justify-center text-white transition-all duration-300 shadow-xl hover:scale-105 active:scale-95
+              bg-[linear-gradient(116.09deg,#0185EB_0%,#00599E_100%)]
+              rounded-tl-[100px] rounded-br-[100px]
+              font-['Poppins'] font-normal mt-1"
+              style={{
+                fontSize: "clamp(12px, 3.5vw, 22px)",
+                height: "clamp(40px, 10vw, 64px)",
+                padding: "0 clamp(18px, 5vw, 40px)",
+                gap: "8px",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <span>{inviteAndEarn.button.text}</span>
+              <RightArrowIcon />
+            </a>
+          </div>
         </div>
       </section>
     </div>

@@ -1,0 +1,115 @@
+{
+  "heroSection": {
+    "title": "Spaces",
+    "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+  },
+  "searchSection": {
+    "searchPlaceholder": "Search games",
+    "categoryButtonLabel": "Category",
+    "findButtonLabel": "Find"
+  },
+  "featuredSpaces": {
+    "title": "Featured Spaces",
+    "createSpaceButtonLabel": "+ Create Space",
+    "games": [
+      {
+        "id": 1,
+        "name": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 2,
+        "name": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 3,
+        "name": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 4,
+        "name": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 5,
+        "name": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 6,
+        "name": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      }
+    ]
+  },
+  "popularSpaces": {
+    "title": "Popular Spaces",
+    "moreButtonLabel": "More",
+    "games": [
+      {
+        "id": 1,
+        "name": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 2,
+        "name": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 3,
+        "name": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 4,
+        "name": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 5,
+        "name": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      },
+      {
+        "id": 6,
+        "name": "Transformer",
+        "description": "Amet minim mollit non deserunt ullamco est sit"
+      }
+    ]
+  },
+  "secondRowGames": [
+    {
+      "id": 1,
+      "name": "Transformer",
+      "description": "Amet minim mollit non deserunt ullamco est sit"
+    },
+    {
+      "id": 2,
+      "name": "Transformer",
+      "description": "Amet minim mollit non deserunt ullamco est sit"
+    },
+    {
+      "id": 3,
+      "name": "Transformer",
+      "description": "Amet minim mollit non deserunt ullamco est sit"
+    },
+    {
+      "id": 4,
+      "name": "Transformer",
+      "description": "Amet minim mollit non deserunt ullamco est sit"
+    },
+    {
+      "id": 5,
+      "name": "Transformer",
+      "description": "Amet minim mollit non deserunt ullamco est sit"
+    },
+    {
+      "id": 6,
+      "name": "Transformer",
+      "description": "Amet minim mollit non deserunt ullamco est sit"
+    }
+  ]
+}

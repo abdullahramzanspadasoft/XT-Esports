@@ -4,12 +4,13 @@ import Image from "next/image";
 import { useState, useRef, useCallback, useEffect } from "react";
 import popularTournamentsData from "@/constant/popular_tournaments.json";
 import TournamentImageCard from "@/components/TournamentImageCard";
-import BlacImage from "@/public/Image/Hero/BlacImage.png";
-import Ellipse7 from "@/public/Image/PopularTournament/Ellipse 7.png";
-import Ellipse8 from "@/public/Image/PopularTournament/Ellipse 8.png";
-import Ellipse9 from "@/public/Image/PopularTournament/Ellipse 9.png";
-import CornerImage from "@/public/Image/PopularTournament/side-corner-image.png";
-import blurbaground from "@/public/Image/PopularTournament/Rectangle 54 (1).png";
+import BlacImage from "@/public/Image/Hero/hero-dark-curtain-overlay.png";
+import Ellipse7 from "@/public/Image/PopularTournament/popular-tournament-carousel-indicator-1.png";
+import Ellipse8 from "@/public/Image/PopularTournament/popular-tournament-carousel-indicator-2.png";
+import Ellipse9 from "@/public/Image/PopularTournament/popular-tournament-carousel-indicator-3.png";
+import CornerImage from "@/public/Image/PopularTournament/popular-tournament-corner-decoration.png";
+import blurbaground from "@/public/Image/PopularTournament/popular-tournament-section-blue-blur.png";
+import popularTournamentsViewContent from "@/constant/home/popular_tournaments_view.json";
 
 const CARD_GAP = 6.36;
 const VISIBLE_COUNT = 4;
@@ -33,28 +34,38 @@ const PopularTournaments = () => {
   );
   const [laptopCardWidth, setLaptopCardWidth] = useState(420);
   const [desktopCardWidth, setDesktopCardWidth] = useState(365.67);
+  const [laptopArrowSize, setLaptopArrowSize] = useState(45);
 
   useEffect(() => {
     const update = () => {
       const w = window.innerWidth;
       if (w >= 1280) {
         setScreenSize("desktop");
-
         const sideElements = 330;
         const available = w - sideElements;
         const dynamicWidth = (available - CARD_GAP * 3) / 4;
-
         if (w >= 1600) setDesktopCardWidth(Math.min(380, dynamicWidth));
         else if (w >= 1500) setDesktopCardWidth(Math.min(350, dynamicWidth));
         else if (w >= 1400) setDesktopCardWidth(Math.min(320, dynamicWidth));
         else setDesktopCardWidth(300);
       } else if (w >= 1024) {
         setScreenSize("laptop");
-        const arrowArea = 45 * 2 + 40 * 2;
+        const arrowSize = 45;
+        setLaptopArrowSize(arrowSize);
+        const arrowArea = arrowSize * 2 + 40 * 2;
         const containerPad = 160;
         const available = w - arrowArea - containerPad;
         const cardW = Math.floor((available - LAPTOP_CARD_GAP) / 2);
         setLaptopCardWidth(Math.min(480, Math.max(340, cardW)));
+      } else if (w >= 700) {
+        setScreenSize("laptop");
+        const arrowSize = w <= 800 ? 28 : 36;
+        setLaptopArrowSize(arrowSize);
+        const containerPad = w <= 800 ? 48 : 80;
+        const arrowArea = arrowSize * 2 + 16 * 2;
+        const available = w - arrowArea - containerPad;
+        const cardW = Math.floor((available - LAPTOP_CARD_GAP) / 2);
+        setLaptopCardWidth(Math.min(480, Math.max(220, cardW)));
       } else {
         setScreenSize("mobile");
       }
@@ -179,38 +190,67 @@ const PopularTournaments = () => {
   const mobileTranslateX = -mobileIndex * MOBILE_CARD_STEP;
   const activeDotIndex =
     (mobileIndex - MOBILE_VISIBLE_COUNT + games.length) % games.length;
+  const ArrowLeft = ({ size }: { size: number }) => (
+    <svg
+      width={size}
+      height={size * 2}
+      viewBox="0 0 45 91"
+      fill="none"
+      style={{ display: "block", flexShrink: 0 }}
+    >
+      <path
+        d="M44.8563 5.6845C44.8549 7.19093 44.2555 8.63518 43.1896 9.69972L14.1285 38.7608C13.2488 39.6402 12.5511 40.6843 12.075 41.8334C11.5989 42.9825 11.3539 44.2141 11.3539 45.4579C11.3539 46.7017 11.5989 47.9334 12.075 49.0825C12.5511 50.2316 13.2488 51.2756 14.1285 52.155L43.1517 81.1783C44.1867 82.2499 44.7594 83.6852 44.7465 85.1749C44.7335 86.6647 44.136 88.0898 43.0825 89.1433C42.029 90.1968 40.6039 90.7943 39.1141 90.8073C37.6244 90.8202 36.1891 90.2475 35.1175 89.2125L6.09422 60.212C2.19174 56.3018 0 51.0031 0 45.4788C0 39.9544 2.19174 34.6557 6.09422 30.7456L35.1553 1.66549C35.95 0.870336 36.9626 0.328771 38.0652 0.10932C39.1677 -0.110131 40.3105 0.00239394 41.3491 0.432657C42.3876 0.86292 43.2752 1.59158 43.8995 2.52644C44.5238 3.4613 44.8568 4.56035 44.8563 5.6845Z"
+        fill="#374957"
+      />
+    </svg>
+  );
+
+  const ArrowRight = ({ size }: { size: number }) => (
+    <svg
+      width={size}
+      height={size * 2}
+      viewBox="0 0 45 91"
+      fill="none"
+      style={{ display: "block", flexShrink: 0 }}
+    >
+      <path
+        d="M-7.07492e-05 85.1229C0.00125556 83.6164 0.60075 82.1722 1.66662 81.1076L30.7278 52.0465C31.6074 51.1671 32.3051 50.1231 32.7812 48.974C33.2573 47.8249 33.5023 46.5932 33.5023 45.3494C33.5023 44.1056 33.2573 42.874 32.7812 41.7249C32.3051 40.5758 31.6074 39.5317 30.7278 38.6523L1.70451 9.6291C0.6695 8.55748 0.0967948 7.12222 0.109741 5.63244C0.122687 4.14265 0.720249 2.71756 1.77372 1.66408C2.8272 0.610609 4.2523 0.0130468 5.74208 0.000101137C7.23186 -0.0128445 8.66712 0.559861 9.73874 1.59487L38.762 30.5954C42.6645 34.5055 44.8562 39.8042 44.8562 45.3286C44.8562 50.853 42.6645 56.1517 38.762 60.0618L9.70086 89.1419C8.90622 89.937 7.89357 90.4786 6.79104 90.698C5.68852 90.9175 4.54567 90.805 3.50712 90.3747C2.46857 89.9444 1.58099 89.2158 0.956684 88.2809C0.332381 87.3461 -0.000580403 86.247 -7.07492e-05 85.1229Z"
+        fill="#374957"
+      />
+    </svg>
+  );
 
   return (
     <div className="w-full relative bg-[#010D18] overflow-hidden min-h-screen py-20">
       <div className="hidden lg:block absolute h-[95%] right-0 top-0 w-[500px] z-10">
         <Image
           src={CornerImage}
-          alt="Corner"
+          alt={popularTournamentsViewContent.alts.corner}
           fill
           className="object-contain object-top-right"
         />
       </div>
       <Image
         src={blurbaground}
-        alt="Corners"
+        alt={popularTournamentsViewContent.alts.blur}
         fill
         className="object-contain object-top-right -ml-[60vw] opacity-100% z-1"
       />
       <Image
         src={BlacImage}
-        alt="Background"
+        alt={popularTournamentsViewContent.alts.background}
         fill
         className="object-cover opacity-30 z-1"
       />
 
       <section className="relative z-10 container mx-auto px-6 md:px-12 lg:px-20">
         <div className="mb-8 md:mb-12 flex flex-col gap-4 md:gap-[30px]">
-          <h2 className="flex flex-wrap items-baseline gap-2 md:gap-4">
+          <h2 className="flex flex-wrap items-baseline gap-6 md:gap-4">
             <span className="font-['Poppins'] font-bold text-[40px] sm:text-[56px] lg:text-[82.43px] leading-[100%] text-white">
-              Popular
+              {popularTournamentsViewContent.titlePrimary}
             </span>
             <span className="font-['Poppins'] font-light text-[40px] sm:text-[56px] lg:text-[82.43px] leading-[100%] text-[#0185EB]">
-              Tournaments
+              {popularTournamentsViewContent.titleSecondary}
             </span>
           </h2>
           <p className="font-['Poppins'] font-medium text-[15px] sm:text-[18px] lg:text-[23.21px] leading-[1.5] text-white max-w-[853px]">
@@ -236,11 +276,11 @@ const PopularTournaments = () => {
             <div className="flex items-center justify-center gap-4">
               <button
                 onClick={() => mobileGoTo("prev")}
-                className="opacity-40 hover:opacity-100 transition-opacity p-2"
+                className="opacity-40 hover:opacity-100 transition-opacity p-2 flex-shrink-0"
               >
                 <svg width="22" height="44" viewBox="0 0 45 91" fill="none">
                   <path
-                    d="M44.8563 5.6845C44.8549 7.19093 44.2555 8.63518 43.1896 9.69972L14.1285 38.7608C13.2488 39.6402 12.5511 40.6843 12.075 41.8334C11.5989 42.9825 11.3539 44.2141 11.3539 45.4579C11.3539 46.7017 11.5989 47.9334 12.075 49.0825C12.5511 50.2316 13.2488 51.2756 14.1285 52.155L43.1517 81.1783C44.1867 82.2499 44.7594 83.6852 44.7465 85.1749C44.7335 86.6647 44.136 88.0898 43.0825 89.1433C42.029 90.1968 40.6039 90.7943 39.1141 90.8073C37.6244 90.8202 36.1891 90.2475 35.1175 89.2125L6.09422 60.212C2.19174 56.3018 0 51.0031 0 45.4788C0 39.9544 2.19174 34.6557 6.09422 30.7456L35.1553 1.66549C35.95 0.870336 36.9626 0.328771 38.0652 0.10932C39.1677 -0.110131 40.3105 0.00239394 41.3491 0.432657C42.3876 0.86292 43.2752 1.59158 43.8995 2.52644C44.5238 3.4613 44.8568 4.56035 44.8563 5.6845Z"
+                    d={popularTournamentsViewContent.arrows.left}
                     fill="#374957"
                   />
                 </svg>
@@ -273,7 +313,7 @@ const PopularTournaments = () => {
                       >
                         <Image
                           src={ellipseImages[i % 4]}
-                          alt="Badge"
+                          alt={popularTournamentsViewContent.alts.badge}
                           width={80}
                           height={80}
                           className="object-contain"
@@ -298,11 +338,11 @@ const PopularTournaments = () => {
               </div>
               <button
                 onClick={() => mobileGoTo("next")}
-                className="opacity-40 hover:opacity-100 transition-opacity p-2"
+                className="opacity-40 hover:opacity-100 transition-opacity p-2 flex-shrink-0"
               >
                 <svg width="22" height="44" viewBox="0 0 45 91" fill="none">
                   <path
-                    d="M-7.07492e-05 85.1229C0.00125556 83.6164 0.60075 82.1722 1.66662 81.1076L30.7278 52.0465C31.6074 51.1671 32.3051 50.1231 32.7812 48.974C33.2573 47.8249 33.5023 46.5932 33.5023 45.3494C33.5023 44.1056 33.2573 42.874 32.7812 41.7249C32.3051 40.5758 31.6074 39.5317 30.7278 38.6523L1.70451 9.6291C0.6695 8.55748 0.0967948 7.12222 0.109741 5.63244C0.122687 4.14265 0.720249 2.71756 1.77372 1.66408C2.8272 0.610609 4.2523 0.0130468 5.74208 0.000101137C7.23186 -0.0128445 8.66712 0.559861 9.73874 1.59487L38.762 30.5954C42.6645 34.5055 44.8562 39.8042 44.8562 45.3286C44.8562 50.853 42.6645 56.1517 38.762 60.0618L9.70086 89.1419C8.90622 89.937 7.89357 90.4786 6.79104 90.698C5.68852 90.9175 4.54567 90.805 3.50712 90.3747C2.46857 89.9444 1.58099 89.2158 0.956684 88.2809C0.332381 87.3461 -0.000580403 86.247 -7.07492e-05 85.1229Z"
+                    d={popularTournamentsViewContent.arrows.right}
                     fill="#374957"
                   />
                 </svg>
@@ -313,23 +353,20 @@ const PopularTournaments = () => {
 
         {screenSize === "laptop" && (
           <div>
-            <div className="flex relative z-20 items-center justify-center gap-10 w-full mt-[3vw]">
+            <div className="flex relative z-20 items-center justify-center gap-4 w-full mt-[3vw]">
               <div
-                className="opacity-40 hover:opacity-100 cursor-pointer transition-opacity"
+                className="opacity-40 hover:opacity-100 cursor-pointer transition-opacity flex-shrink-0"
                 onClick={() => laptopGoTo("prev")}
               >
-                <svg width="45" height="91" viewBox="0 0 45 91" fill="none">
-                  <path
-                    d="M44.8563 5.6845C44.8549 7.19093 44.2555 8.63518 43.1896 9.69972L14.1285 38.7608C13.2488 39.6402 12.5511 40.6843 12.075 41.8334C11.5989 42.9825 11.3539 44.2141 11.3539 45.4579C11.3539 46.7017 11.5989 47.9334 12.075 49.0825C12.5511 50.2316 13.2488 51.2756 14.1285 52.155L43.1517 81.1783C44.1867 82.2499 44.7594 83.6852 44.7465 85.1749C44.7335 86.6647 44.136 88.0898 43.0825 89.1433C42.029 90.1968 40.6039 90.7943 39.1141 90.8073C37.6244 90.8202 36.1891 90.2475 35.1175 89.2125L6.09422 60.212C2.19174 56.3018 0 51.0031 0 45.4788C0 39.9544 2.19174 34.6557 6.09422 30.7456L35.1553 1.66549C35.95 0.870336 36.9626 0.328771 38.0652 0.10932C39.1677 -0.110131 40.3105 0.00239394 41.3491 0.432657C42.3876 0.86292 43.2752 1.59158 43.8995 2.52644C44.5238 3.4613 44.8568 4.56035 44.8563 5.6845Z"
-                    fill="#374957"
-                  />
-                </svg>
+                <ArrowLeft size={laptopArrowSize} />
               </div>
+
               <div
                 style={{
                   width: `${laptopViewportWidth}px`,
                   overflow: "hidden",
                   flexShrink: 0,
+                  minWidth: 0,
                 }}
               >
                 <div
@@ -360,7 +397,7 @@ const PopularTournaments = () => {
                       >
                         <Image
                           src={ellipseImages[i % 4]}
-                          alt="Badge"
+                          alt={popularTournamentsViewContent.alts.badge}
                           width={laptopBadgeSize}
                           height={laptopBadgeSize}
                         />
@@ -382,16 +419,12 @@ const PopularTournaments = () => {
                   ))}
                 </div>
               </div>
+
               <div
-                className="opacity-40 hover:opacity-100 cursor-pointer transition-opacity"
+                className="opacity-40 hover:opacity-100 cursor-pointer transition-opacity flex-shrink-0"
                 onClick={() => laptopGoTo("next")}
               >
-                <svg width="45" height="91" viewBox="0 0 45 91" fill="none">
-                  <path
-                    d="M-7.07492e-05 85.1229C0.00125556 83.6164 0.60075 82.1722 1.66662 81.1076L30.7278 52.0465C31.6074 51.1671 32.3051 50.1231 32.7812 48.974C33.2573 47.8249 33.5023 46.5932 33.5023 45.3494C33.5023 44.1056 33.2573 42.874 32.7812 41.7249C32.3051 40.5758 31.6074 39.5317 30.7278 38.6523L1.70451 9.6291C0.6695 8.55748 0.0967948 7.12222 0.109741 5.63244C0.122687 4.14265 0.720249 2.71756 1.77372 1.66408C2.8272 0.610609 4.2523 0.0130468 5.74208 0.000101137C7.23186 -0.0128445 8.66712 0.559861 9.73874 1.59487L38.762 30.5954C42.6645 34.5055 44.8562 39.8042 44.8562 45.3286C44.8562 50.853 42.6645 56.1517 38.762 60.0618L9.70086 89.1419C8.90622 89.937 7.89357 90.4786 6.79104 90.698C5.68852 90.9175 4.54567 90.805 3.50712 90.3747C2.46857 89.9444 1.58099 89.2158 0.956684 88.2809C0.332381 87.3461 -0.000580403 86.247 -7.07492e-05 85.1229Z"
-                    fill="#374957"
-                  />
-                </svg>
+                <ArrowRight size={laptopArrowSize} />
               </div>
             </div>
           </div>
@@ -405,7 +438,7 @@ const PopularTournaments = () => {
             >
               <svg width="45" height="91" viewBox="0 0 45 91" fill="none">
                 <path
-                  d="M44.8563 5.6845C44.8549 7.19093 44.2555 8.63518 43.1896 9.69972L14.1285 38.7608C13.2488 39.6402 12.5511 40.6843 12.075 41.8334C11.5989 42.9825 11.3539 44.2141 11.3539 45.4579C11.3539 46.7017 11.5989 47.9334 12.075 49.0825C12.5511 50.2316 13.2488 51.2756 14.1285 52.155L43.1517 81.1783C44.1867 82.2499 44.7594 83.6852 44.7465 85.1749C44.7335 86.6647 44.136 88.0898 43.0825 89.1433C42.029 90.1968 40.6039 90.7943 39.1141 90.8073C37.6244 90.8202 36.1891 90.2475 35.1175 89.2125L6.09422 60.212C2.19174 56.3018 0 51.0031 0 45.4788C0 39.9544 2.19174 34.6557 6.09422 30.7456L35.1553 1.66549C35.95 0.870336 36.9626 0.328771 38.0652 0.10932C39.1677 -0.110131 40.3105 0.00239394 41.3491 0.432657C42.3876 0.86292 43.2752 1.59158 43.8995 2.52644C44.5238 3.4613 44.8568 4.56035 44.8563 5.6845Z"
+                  d={popularTournamentsViewContent.arrows.left}
                   fill="#374957"
                 />
               </svg>
@@ -449,7 +482,7 @@ const PopularTournaments = () => {
                       >
                         <Image
                           src={ellipseImages[i % 4]}
-                          alt="Badge"
+                          alt={popularTournamentsViewContent.alts.badge}
                           width={93}
                           height={93}
                           className="object-contain"
@@ -488,7 +521,7 @@ const PopularTournaments = () => {
             >
               <svg width="45" height="91" viewBox="0 0 45 91" fill="none">
                 <path
-                  d="M-7.07492e-05 85.1229C0.00125556 83.6164 0.60075 82.1722 1.66662 81.1076L30.7278 52.0465C31.6074 51.1671 32.3051 50.1231 32.7812 48.974C33.2573 47.8249 33.5023 46.5932 33.5023 45.3494C33.5023 44.1056 33.2573 42.874 32.7812 41.7249C32.3051 40.5758 31.6074 39.5317 30.7278 38.6523L1.70451 9.6291C0.6695 8.55748 0.0967948 7.12222 0.109741 5.63244C0.122687 4.14265 0.720249 2.71756 1.77372 1.66408C2.8272 0.610609 4.2523 0.0130468 5.74208 0.000101137C7.23186 -0.0128445 8.66712 0.559861 9.73874 1.59487L38.762 30.5954C42.6645 34.5055 44.8562 39.8042 44.8562 45.3286C44.8562 50.853 42.6645 56.1517 38.762 60.0618L9.70086 89.1419C8.90622 89.937 7.89357 90.4786 6.79104 90.698C5.68852 90.9175 4.54567 90.805 3.50712 90.3747C2.46857 89.9444 1.58099 89.2158 0.956684 88.2809C0.332381 87.3461 -0.000580403 86.247 -7.07492e-05 85.1229Z"
+                  d={popularTournamentsViewContent.arrows.right}
                   fill="#374957"
                 />
               </svg>
@@ -499,7 +532,7 @@ const PopularTournaments = () => {
         <div className="mt-20 flex items-center justify-end w-full">
           <div className="flex items-center gap-[25px] max-w-3xl w-full">
             <span className="font-['Poppins'] font-normal text-[21.86px] text-white whitespace-nowrap">
-              Explore more
+              {popularTournamentsViewContent.exploreMore}
             </span>
             <div className="flex items-center w-full">
               <svg

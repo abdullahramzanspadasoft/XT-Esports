@@ -7,13 +7,13 @@
     "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     "button": {
       "text": "Explore more",
-      "href": "#"
+      "href": "/tournaments"
     },
     "tournaments": [
       {
         "id": 1,
         "name": "COD CHAMPIONSHIP",
-        "coverImage": "/PopularTournament/Rectangle 51.png",
+        "coverImage": "/Image/PopularTournament/popular-tournament-cover-01.png",
         "time": "IN 35 MINUTES, 23:00",
         "region": "Europe",
         "matchType": "5v5",
@@ -23,7 +23,7 @@
       {
         "id": 2,
         "name": "COD CHAMPIONSHIP",
-        "coverImage": "/PopularTournament/Rectangle 51.png",
+        "coverImage": "/Image/PopularTournament/popular-tournament-cover-01.png",
         "time": "IN 35 MINUTES, 23:00",
         "region": "Europe",
         "matchType": "5v5",
@@ -33,7 +33,7 @@
       {
         "id": 3,
         "name": "COD CHAMPIONSHIP",
-        "coverImage": "/PopularTournament/Rectangle 52.png",
+        "coverImage": "/Image/PopularTournament/popular-tournament-cover-02.png",
         "time": "IN 35 MINUTES, 23:00",
         "region": "Europe",
         "matchType": "5v5",
@@ -43,7 +43,7 @@
       {
         "id": 4,
         "name": "COD CHAMPIONSHIP",
-        "coverImage": "/PopularTournament/Rectangle 53.png",
+        "coverImage": "/Image/PopularTournament/popular-tournament-cover-03.png",
         "time": "IN 35 MINUTES, 23:00",
         "region": "Europe",
         "matchType": "5v5",
@@ -52,7 +52,7 @@
       }
     ],
     "characterImage": {
-      "src": "/Image/PopularGames/fortnite-character.png",
+      "src": "/Image/Hero/hero-alien-side-character.png",
       "alt": "Tournament Character"
     }
   }

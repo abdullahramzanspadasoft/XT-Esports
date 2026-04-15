@@ -97,22 +97,22 @@
     "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     "button": {
       "text": "Let's Start",
-      "href": "#"
+      "href": "/features"
     },
     "socialLinks": [
       {
         "name": "Facebook",
-        "href": "#",
+        "href": "https://facebook.com",
         "icon": "facebook"
       },
       {
         "name": "Twitter",
-        "href": "#",
+        "href": "https://x.com",
         "icon": "twitter"
       },
       {
         "name": "Discord",
-        "href": "#",
+        "href": "https://discord.com",
         "icon": "discord"
       }
     ]

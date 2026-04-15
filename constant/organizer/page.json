@@ -1,0 +1,42 @@
+{
+  "content": {
+    "heroTitle": ["Grow, organize", "and monetize", "esports."],
+    "heroDescription": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    "cta": "+ Add Listing",
+    "whyTitle": [
+      "Why XT Esports is great",
+      "for esports and community",
+      "organizers."
+    ],
+    "benefits": [
+      {
+        "title": "Fully automated",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida elit orci, eget fringilla est varius quis. Ut dignissim vestibulum urna. Sed vulputate facilisis felis, at condimentum purus ornare ac. Vivamus tempus semper volutpat. Maecenas sit amet quam auctor, tincidunt elit eget, egestas justo. Praesent porttitor gravida leo"
+      },
+      {
+        "title": "Advanced",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida elit orci, eget fringilla est varius quis. Ut dignissim vestibulum urna. Sed vulputate facilisis felis, at condimentum purus ornare ac. Vivamus tempus semper volutpat. Maecenas sit amet quam auctor, tincidunt elit eget, egestas justo. Praesent porttitor gravida leo"
+      },
+      {
+        "title": "Make it your own",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida elit orci, eget fringilla est varius quis. Ut dignissim vestibulum urna. Sed vulputate facilisis felis, at condimentum purus ornare ac. Vivamus tempus semper volutpat. Maecenas sit amet quam auctor, tincidunt elit eget, egestas justo. Praesent porttitor gravida leo"
+      },
+      {
+        "title": "Fully automated",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida elit orci, eget fringilla est varius quis. Ut dignissim vestibulum urna. Sed vulputate facilisis felis, at condimentum purus ornare ac. Vivamus tempus semper volutpat. Maecenas sit amet quam auctor, tincidunt elit eget, egestas justo. Praesent porttitor gravida leo"
+      },
+      {
+        "title": "Advanced",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida elit orci, eget fringilla est varius quis. Ut dignissim vestibulum urna. Sed vulputate facilisis felis, at condimentum purus ornare ac. Vivamus tempus semper volutpat. Maecenas sit amet quam auctor, tincidunt elit eget, egestas justo. Praesent porttitor gravida leo"
+      }
+    ],
+    "qaTitle": "Questions and answers.",
+    "faqItem": "FAQs Will be added here ?",
+    "alts": {
+      "hero": "Organizer Hero"
+    }
+  },
+  "images": {
+    "hero": "/Image/organizer/organizer-page-hero.png"
+  }
+}

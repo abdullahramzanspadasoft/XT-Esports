@@ -1,0 +1,47 @@
+{
+  "content": {
+    "title": "Leaderboard",
+    "intro": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    "searchPlaceholder": "Search List",
+    "categoryLabel": "Category",
+    "findButtonLabel": "Find",
+    "rankLabel": "RANK",
+    "firstRank": "1st",
+    "secondRank": "2nd",
+    "thirdRank": "3rd",
+    "score": "45263",
+    "listScore": "4523",
+    "playerName": "Simon Adam",
+    "playerHandle": "@simonadam",
+    "alts": {
+      "background": "Leaderboard Background",
+      "podium": "Leaderboard Podium",
+      "banner": "Leaderboard Banner",
+      "avatar": "Player Avatar"
+    },
+    "icons": {
+      "searchPath": "M23.562 21.4455L18.9168 16.7984C22.3926 12.1536 21.4448 5.57058 16.8001 2.09486C12.1553 -1.38086 5.57229 -0.433144 2.09657 4.21163C-1.37915 8.8564 -0.431435 15.4394 4.21334 18.9151C7.94441 21.7071 13.0689 21.7071 16.8001 18.9151L21.4472 23.5622C22.0312 24.1462 22.978 24.1462 23.5619 23.5622C24.1459 22.9782 24.1459 22.0314 23.5619 21.4475L23.562 21.4455ZM10.5454 18.0182C6.41737 18.0182 3.07096 14.6718 3.07096 10.5437C3.07096 6.41566 6.41737 3.06925 10.5454 3.06925C14.6735 3.06925 18.0199 6.41566 18.0199 10.5437C18.0155 14.6699 14.6717 18.0138 10.5454 18.0182Z",
+      "chevronPath": "M19.0611 7.85399C18.9218 7.7146 18.7564 7.60402 18.5744 7.52858C18.3923 7.45314 18.1972 7.41431 18.0001 7.41431C17.8031 7.41431 17.6079 7.45314 17.4259 7.52858C17.2438 7.60402 17.0784 7.7146 16.9391 7.85399L12.3531 12.439C12.2594 12.5327 12.1322 12.5854 11.9996 12.5854C11.867 12.5854 11.7399 12.5327 11.6461 12.439L7.06113 7.85399C6.77986 7.57259 6.39834 7.41445 6.00048 7.41436C5.60262 7.41427 5.22102 7.57222 4.93963 7.85349C4.65823 8.13475 4.50009 8.51627 4.5 8.91413C4.49991 9.31199 4.65786 9.69359 4.93913 9.97499L9.52513 14.561C9.85014 14.886 10.236 15.1439 10.6607 15.3198C11.0853 15.4957 11.5405 15.5862 12.0001 15.5862C12.4598 15.5862 12.9149 15.4957 13.3396 15.3198C13.7643 15.1439 14.1501 14.886 14.4751 14.561L19.0611 9.97499C19.3423 9.6937 19.5003 9.31223 19.5003 8.91449C19.5003 8.51674 19.3423 8.13528 19.0611 7.85399Z"
+    }
+  },
+  "images": {
+    "background": "/Image/LeaderBoard/leaderboard-page-background.png",
+    "podiums": {
+      "first": "/Image/LeaderBoard/leaderboard-podium-first-place.png",
+      "second": "/Image/LeaderBoard/leaderboard-podium-second-place.png",
+      "third": "/Image/LeaderBoard/leaderboard-podium-third-place.png"
+    },
+    "banner": "/Image/LeaderBoard/leaderboard-promo-banner-call-of-duty.png",
+    "avatars": [
+      "/Image/LeaderBoard/leaderboard-player-avatar-01.png",
+      "/Image/LeaderBoard/leaderboard-player-avatar-02.png",
+      "/Image/LeaderBoard/leaderboard-player-avatar-03.png",
+      "/Image/LeaderBoard/leaderboard-player-avatar-02.png",
+      "/Image/LeaderBoard/leaderboard-player-avatar-03.png",
+      "/Image/LeaderBoard/leaderboard-player-avatar-01.png",
+      "/Image/LeaderBoard/leaderboard-player-avatar-02.png",
+      "/Image/LeaderBoard/leaderboard-player-avatar-03.png",
+      "/Image/LeaderBoard/leaderboard-player-avatar-01.png"
+    ]
+  }
+}

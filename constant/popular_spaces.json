@@ -9,7 +9,7 @@
       {
         "id": 1,
         "logo": "/PopularSpaces/paint-logo.png",
-        "image": "/Image/PopularSpace/Rectangle 56.png",
+        "image": "/Image/PopularSpace/popular-space-card-thumb-01.png",
         "title": "Transformer",
         "description": "Amet minim mollit non deserunt ullamco est sit",
         "backgroundColor": "#FFFFFF"
@@ -17,7 +17,7 @@
       {
         "id": 2,
         "logo": "/PopularSpaces/c-logo.png",
-        "image": "/Image/PopularSpace/Rectangle 57.png",
+        "image": "/Image/PopularSpace/popular-space-card-thumb-02.png",
         "title": "Transformer",
         "description": "Amet minim mollit non deserunt ullamco est sit",
         "backgroundColor": "#1A1F2E"
@@ -25,7 +25,7 @@
       {
         "id": 3,
         "logo": "/PopularSpaces/sushi-logo.png",
-        "image": "/Image/PopularSpace/Rectangle 58.png",
+        "image": "/Image/PopularSpace/popular-space-card-thumb-03.png",
         "title": "Transformer",
         "description": "Amet minim mollit non deserunt ullamco est sit",
         "backgroundColor": "#FFFFFF"
@@ -33,7 +33,7 @@
       {
         "id": 4,
         "logo": "/PopularSpaces/tyme-logo.png",
-        "image": "/Image/PopularSpace/Rectangle 59.png",
+        "image": "/Image/PopularSpace/popular-space-card-thumb-04.png",
         "title": "Transformer",
         "description": "Amet minim mollit non deserunt ullamco est sit",
         "backgroundColor": "#FFFFFF"
@@ -41,7 +41,7 @@
       {
         "id": 5,
         "logo": "/PopularSpaces/b-logo.png",
-        "image": "/Image/PopularSpace/Rectangle 60.png",
+        "image": "/Image/PopularSpace/popular-space-card-thumb-05.png",
         "title": "Transformer",
         "description": "Amet minim mollit non deserunt ullamco est sit",
         "backgroundColor": "#F5F0E8"
@@ -49,7 +49,7 @@
       {
         "id": 6,
         "logo": "/PopularSpaces/logo-6.png",
-        "image": "/Image/PopularSpace/Rectangle 59.png",
+        "image": "/Image/PopularSpace/popular-space-card-thumb-04.png",
 
         "title": "Transformer",
         "description": "Amet minim mollit non deserunt ullamco est sit",

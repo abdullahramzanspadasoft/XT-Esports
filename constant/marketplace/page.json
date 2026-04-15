@@ -1,0 +1,36 @@
+{
+  "content": {
+    "heroTitle": ["Visit Marketplace", "Or List your items", "to sell"],
+    "heroDescription": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    "cta": "+ Add Listing",
+    "searchPlaceholder": "Search List",
+    "categoryLabel": "Category",
+    "findLabel": "Find",
+    "cardTitle": "Overlays",
+    "cardDescription": "Amet minim mollit non deserunt ullamco est sit",
+    "cardPrice": "$30.0",
+    "footerTitle": "List and Earn Money",
+    "footerDescription": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+    "alts": {
+      "banner": "Marketplace Banner",
+      "item": "Marketplace Item"
+    }
+  },
+  "images": {
+    "banner": "/Image/MarketPlace/marketplace-footer-cta-banner.png",
+    "cards": [
+      "/Image/MarketPlace/marketplace-product-thumb-01.png",
+      "/Image/MarketPlace/marketplace-product-thumb-01.png",
+      "/Image/MarketPlace/marketplace-product-thumb-02.png",
+      "/Image/MarketPlace/marketplace-product-thumb-03.png",
+      "/Image/MarketPlace/marketplace-product-thumb-01.png",
+      "/Image/MarketPlace/marketplace-product-thumb-01.png",
+      "/Image/MarketPlace/marketplace-product-thumb-01.png",
+      "/Image/MarketPlace/marketplace-product-thumb-01.png",
+      "/Image/MarketPlace/marketplace-product-thumb-01.png",
+      "/Image/MarketPlace/marketplace-product-thumb-01.png",
+      "/Image/MarketPlace/marketplace-product-thumb-01.png",
+      "/Image/MarketPlace/marketplace-product-thumb-01.png"
+    ]
+  }
+}

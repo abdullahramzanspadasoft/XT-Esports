@@ -9,23 +9,22 @@ const XtEsportsBanner = () => {
   return (
     <div className="w-full relative overflow-hidden flex items-center justify-center min-h-[250px] lg:h-[420px] py-16 lg:py-0 bg-[#011324]">
       <section
-        className="relative z-10 w-full max-w-[1920px] mx-auto 
-                   px-8 md:px-16 lg:px-24 xl:px-40
-                   flex flex-col lg:flex-row 
-                   items-center justify-center
-                   gap-10 lg:gap-40"
+        className="relative z-10 w-full max-w-full mx-auto 
+             px-4
+             flex flex-col lg:flex-row 
+             items-center justify-center lg:justify-between
+             gap-[10px] lg:gap-[53px] lg:ml-[100px]"
       >
-        {" "}
-        <div className="flex items-center justify-center shrink-0 w-[304px] h-[35vw]">
+        <div className="flex items-center justify-center shrink-0 w-[160px] sm:w-[220px] lg:w-[304px] h-auto lg:h-[35vw]">
           <BrandLogoIcon className="w-full h-full block" />
         </div>
-        <div className="max-w-[1000px]">
+        <div className="flex-1 max-w-full min-w-0">
           <p
             className="font-['Poppins'] font-medium 
-                       text-[16px] sm:text-[18px] lg:text-[23px] 
+                       text-[13px] sm:text-[16px] lg:text-[23px] 
                        text-white 
-                       text-center lg:text-left 
-                       leading-[1.5]"
+                       text-center lg:text-left
+                       leading-[1.5] whitespace-pre-line"
           >
             {xtEsportsBanner.text}
           </p>

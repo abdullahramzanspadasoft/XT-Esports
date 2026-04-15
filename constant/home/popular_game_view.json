@@ -1,0 +1,15 @@
+{
+  "alts": {
+    "sectionBackground": "Popular Game Background",
+    "sectionShadow": "Popular Game Shadow",
+    "backgroundCard": "Popular Game Background Card",
+    "blackBackground": "Black Background"
+  },
+  "aria": {
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "imagePaths": {
+    "backgroundCard": "/Image/Hero/PopularGame/popular-games-carousel-card-back.png"
+  }
+}

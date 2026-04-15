@@ -5,8 +5,9 @@ import type { ScrollContainer } from "@/types/type";
 import Image from "next/image";
 import popularSpacesData from "@/constant/popular_spaces.json";
 import { TickIcon } from "@/icons";
-import BlacImage from "@/public/Image/Hero/BlacImage.png";
-import baground from "@/public/Image/PopularTournament/Rectangle 55.png";
+import BlacImage from "@/public/Image/Hero/hero-dark-curtain-overlay.png";
+import baground from "@/public/Image/PopularTournament/popular-tournament-marquee-background.png";
+import popularSpacesViewContent from "@/constant/home/popular_spaces_view.json";
 
 const PopularSpaces = () => {
   const { popularSpaces } = popularSpacesData;
@@ -66,7 +67,7 @@ const PopularSpaces = () => {
       >
         <Image
           src={baground}
-          alt="Invite and Earn"
+          alt={popularSpacesViewContent.backgroundAlt}
           fill
           priority
           className="object-cover object-bottom opacity-100"
@@ -84,13 +85,13 @@ const PopularSpaces = () => {
 
       <section className="relative z-10 container mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
         <div className="mb-8 sm:mb-10 lg:mb-12">
-          <h2 className="mb-4 sm:mb-6 relative bottom-[12px]">
-            <div className="flex flex-wrap gap-2 sm:gap-4 items-baseline">
-              <span className="font-['Poppins'] font-bold text-[40px] sm:text-[56px] lg:text-[82.43px] leading-[100%] text-white">
-                Popular
+          <h2 className="mb-4 sm:mb-6">
+            <div className="flex flex-wrap gap-6 sm:gap-4 items-baseline">
+              <span className="font-['Poppins'] font-bold text-[40px] sm:text-[56px] lg:text-[82.43px] leading-[115%] text-white">
+                {popularSpacesViewContent.titlePrimary}
               </span>
-              <span className="font-['Poppins'] font-light text-[40px] sm:text-[56px] lg:text-[82.43px] leading-[100%] text-[#0185EB]">
-                Spaces
+              <span className="font-['Poppins'] font-light text-[40px] sm:text-[56px] lg:text-[82.43px] leading-[115%] text-[#0185EB]">
+                {popularSpacesViewContent.titleSecondary}
               </span>
             </div>
           </h2>

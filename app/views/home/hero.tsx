@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import HeroImage from "@/public/Image/Hero/HeroImage.png";
-import Image2 from "@/public/Image/Hero/Alian.png";
-import BlacImage from "@/public/Image/Hero/BlacImage.png";
+import HeroImage from "@/public/Image/Hero/hero-main-key-art.png";
+import Image2 from "@/public/Image/Hero/hero-alien-side-character.png";
+import BlacImage from "@/public/Image/Hero/hero-dark-curtain-overlay.png";
 import heroData from "@/constant/data.json";
 import {
   FacebookIcon,
@@ -19,7 +19,6 @@ const Hero = () => {
 
   return (
     <section className="relative z-0 w-full overflow-hidden min-h-screen xl:h-screen xl:pt-[194px] xl:pb-0">
-      {/* Background Image */}
       <Image
         src={HeroImage}
         alt="XT Esports Hero"
@@ -30,7 +29,6 @@ const Hero = () => {
 
       <div className="absolute inset-0 z-10 bg-[#011425]/99" />
 
-      {/* DESKTOP ASSETS */}
       <Image
         src={BlacImage}
         alt="Black Background"
