@@ -1,40 +1,20 @@
 "use client";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import navbarData from "../constant/data.json";
 import { processNavbarItems } from "../utils/navbarUtils";
 import { getRouteByItemId } from "@/utils/getRouteByItemId";
 import {
-  HomeIcon,
-  StarIcon,
-  GamepadIcon,
-  RocketIcon,
-  CartIcon,
-  GridIcon,
-  GlobeIcon,
-  TrophyIcon,
-  MoreIcon,
   BrandLogoIcon,
   ChevronDownIcon,
-  BellIcon,
 } from "@/icons";
-
-const getIcon = (iconName: string): React.ReactNode => {
-  const iconMap: Record<string, React.ReactElement> = {
-    home: <HomeIcon />,
-    star: <StarIcon />,
-    gamepad: <GamepadIcon />,
-    rocket: <RocketIcon />,
-    cart: <CartIcon />,
-    grid: <GridIcon />,
-    globe: <GlobeIcon />,
-    trophy: <TrophyIcon />,
-    more: <MoreIcon />,
-    bell: <BellIcon />,
-  };
-  return iconMap[iconName] || null;
-};
+import {
+  getNavbarIcon,
+  isNavbarItemActive,
+  useCloseOnOutsideClick,
+  useNavbarLayout,
+} from "@/utils/navbar";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -44,67 +24,20 @@ const Navbar = () => {
   const allNavItems = [...headerTextSec1, ...headerTextSec2];
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
-  // Must match SSR: never read window in useState initializer or server and first
-  // client paint diverge (hydration mismatch on visibleNavItems vs overflow).
-  const [windowWidth, setWindowWidth] = useState(0);
 
-  const dropdownOptions = moreItem?.children || [];
-
-  useLayoutEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const visibleCount = React.useMemo(() => {
-    if (windowWidth >= 1536) return 8;
-    if (windowWidth >= 1440) return 7;
-    if (windowWidth >= 1280) return 6;
-    if (windowWidth >= 1024) return 5;
-    if (windowWidth > 700) return 3;
-    return 0;
-  }, [windowWidth]);
-
-  const visibleNavItems = allNavItems.slice(0, visibleCount);
-  const overflowNavItems = allNavItems.slice(visibleCount);
-
-  const combinedMoreOptions: Array<{
-    label: string;
-    icon: string;
-    id?: number;
-  }> = [
-    ...overflowNavItems.map((item) => ({
-      label: item.label,
-      id: item.id,
-      icon: item.icon,
-    })),
-    ...dropdownOptions.map((opt) => ({ ...opt, icon: "more" })),
-  ];
-  const hasMoreOptions = combinedMoreOptions.length > 0;
+  const dropdownOptions = (moreItem?.children || []).map((option) => ({
+    ...option,
+    icon: "more",
+  }));
+  const {
+    visibleNavItems,
+    overflowNavItems,
+    combinedMoreOptions,
+    hasMoreOptions,
+  } = useNavbarLayout(allNavItems, dropdownOptions);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setMoreDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const isItemActive = (itemId: number) => {
-    const route = getRouteByItemId(itemId);
-    if (route === "/") {
-      return pathname === "/";
-    }
-    return pathname === route || pathname.startsWith(`${route}/`);
-  };
+  useCloseOnOutsideClick(dropdownRef, () => setMoreDropdownOpen(false));
 
   return (
     <>
@@ -134,18 +67,18 @@ const Navbar = () => {
                     className="flex gap-[6px] xl:gap-[8px] items-center"
                   >
                     <div
-                      className={`w-[14px] h-[14px] flex items-center justify-center transition-colors ${isItemActive(item.id) ? "text-[#0185EB]" : "text-[#004C79] group-hover:text-[#0185EB]"}`}
+                      className={`w-[14px] h-[14px] flex items-center justify-center transition-colors ${isNavbarItemActive(pathname, item.id) ? "text-[#0185EB]" : "text-[#004C79] group-hover:text-[#0185EB]"}`}
                     >
-                      {getIcon(item.icon)}
+                      {getNavbarIcon(item.icon)}
                     </div>
                     <span
-                      className={`font-poppins text-[13px] min-[1400px]:text-[14px] 2xl:text-[15px] whitespace-nowrap transition-colors ${isItemActive(item.id) ? "text-[#0185EB]" : "text-[#004C79] group-hover:text-[#0185EB]"}`}
+                      className={`font-poppins text-[13px] min-[1400px]:text-[14px] 2xl:text-[15px] whitespace-nowrap transition-colors ${isNavbarItemActive(pathname, item.id) ? "text-[#0185EB]" : "text-[#004C79] group-hover:text-[#0185EB]"}`}
                     >
                       {item.label}
                     </span>
                   </Link>
 
-                  {isItemActive(item.id) && (
+                  {isNavbarItemActive(pathname, item.id) && (
                     <div
                       className="absolute left-1/2 -translate-x-1/2 animate-in fade-in slide-in-from-top-1 duration-200"
                       style={{
@@ -171,7 +104,7 @@ const Navbar = () => {
                     }
                   >
                     <div className="w-[14px] h-[14px] flex items-center justify-center text-[#004C79] group-hover:text-[#0185EB] transition-colors">
-                      {getIcon(moreItem?.icon || "more")}
+                      {getNavbarIcon(moreItem?.icon || "more")}
                     </div>
                     <span
                       className={`font-poppins text-[13px] min-[1400px]:text-[14px] 2xl:text-[15px] whitespace-nowrap transition-colors ${moreDropdownOpen ? "text-[#0185EB]" : "text-[#004C79] group-hover:text-[#0185EB]"}`}
@@ -192,14 +125,14 @@ const Navbar = () => {
                           <Link
                             key={i}
                             href={getRouteByItemId(opt.id)}
-                            className={`px-5 py-2 flex items-center gap-3 font-poppins text-[14px] transition-colors ${isItemActive(opt.id)
+                            className={`px-5 py-2 flex items-center gap-3 font-poppins text-[14px] transition-colors ${isNavbarItemActive(pathname, opt.id)
                                 ? "text-[#0185EB] bg-[#0185EB10]"
                                 : "text-[#004C79] hover:text-[#0185EB] hover:bg-[#0185EB10]"
                               }`}
                             onClick={() => setMoreDropdownOpen(false)}
                           >
                             <div className="w-[16px] h-[16px] flex items-center justify-center shrink-0">
-                              {getIcon(opt.icon)}
+                              {getNavbarIcon(opt.icon)}
                             </div>
                             <span className="whitespace-nowrap">{opt.label}</span>
                           </Link>
@@ -211,7 +144,7 @@ const Navbar = () => {
                             onClick={() => setMoreDropdownOpen(false)}
                           >
                             <div className="w-[16px] h-[16px] flex items-center justify-center shrink-0">
-                              {getIcon(opt.icon)}
+                              {getNavbarIcon(opt.icon)}
                             </div>
                             <span className="whitespace-nowrap">{opt.label}</span>
                           </button>
@@ -226,7 +159,7 @@ const Navbar = () => {
             <div className="flex items-center gap-[10px] min-[1400px]:gap-[20px] 2xl:gap-[25px] shrink-0">
               {bellItem && (
                 <div className="w-[20px] sm:w-[24px] text-[#0185EB] cursor-pointer flex items-center">
-                  {getIcon(bellItem.icon)}
+                  {getNavbarIcon(bellItem.icon)}
                 </div>
               )}
 
@@ -283,14 +216,14 @@ const Navbar = () => {
               <Link
                 key={item.id}
                 href={getRouteByItemId(item.id)}
-                className={`flex items-center gap-4 p-4 rounded-xl transition-colors ${isItemActive(item.id)
+                className={`flex items-center gap-4 p-4 rounded-xl transition-colors ${isNavbarItemActive(pathname, item.id)
                     ? "text-[#0185EB] bg-white/5"
                     : "text-[#004C79] hover:text-[#0185EB] hover:bg-white/5"
                   }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <div className="w-5 h-5 flex items-center justify-center">
-                  {getIcon(item.icon)}
+                  {getNavbarIcon(item.icon)}
                 </div>
                 <span className="font-poppins text-[16px] font-medium">
                   {item.label}

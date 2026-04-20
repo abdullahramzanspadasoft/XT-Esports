@@ -4,6 +4,7 @@ import leaderboardPage from "@/constant/leaderboard/page.json";
 
 const leaderboardPageContent = leaderboardPage.content;
 const leaderboardPageImages = leaderboardPage.images;
+const leaderboardRows = leaderboardPageImages.avatars.slice(0, 9);
 const LeaderboardPage = () => {
   return (
     <>
@@ -135,206 +136,42 @@ const LeaderboardPage = () => {
         <h1 className="absolute mt-1.5 w-[104px] h-[33px] top-[1822px] left-[1018px] opacity-100 font-[Poppins] font-normal text-[22.03px] leading-[100%] tracking-[0%] text-[#FFFFFF33]">
           {leaderboardPageContent.categoryLabel}
         </h1>
-        <div className="absolute w-[1479px] h-[143px] top-[2101px] left-[223px] bg-[#00284E] rounded-[24px] opacity-100"></div>
-        <Image
-          src={leaderboardPageImages.avatars[0]}
-          alt={leaderboardPageContent.alts.avatar}
-          width={118}
-          height={117}
-          className="w-[118px] h-[117px] absolute top-[2114px] left-[239px] rounded-[18px] opacity-100 rotate-0"
-        />
-        <h1 className="absolute top-[2139px] text-white left-[396px] w-[212px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal opacity-100">
-          {leaderboardPageContent.playerName}
-        </h1>
-        <p className="absolute top-[2180px] left-[396px] w-[127px] h-[27px] font-[Poppins] font-normal text-[17.69px] leading-[100%] tracking-normal text-[#045CB5] opacity-100">
-          {leaderboardPageContent.playerHandle}
-        </p>
-        <h1 className="absolute top-[2141px] left-[1589px] w-[33px] h-[17px] font-[Poppins] font-bold text-[11.55px] leading-[100%] tracking-normal text-white opacity-100">
-          {leaderboardPageContent.rankLabel}
-        </h1>
-        <h1 className="absolute top-[2152px] left-[1566px] w-[80px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal text-white opacity-100">
-          {leaderboardPageContent.listScore}
-        </h1>
-        <div className="absolute top-[2274px] left-[223px] w-[1479px] h-[143px] rounded-[24px] bg-[#00284E] opacity-100"></div>
-        <Image
-          src={leaderboardPageImages.avatars[1]}
-          alt={leaderboardPageContent.alts.avatar}
-          width={118}
-          height={117}
-          className="absolute top-[2287px] left-[239px] w-[118px] h-[117px] rounded-[18px] opacity-100"
-        />
-        <h1 className="absolute top-[2309px] text-white left-[396px] w-[212px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal opacity-100">
-          {leaderboardPageContent.playerName}
-        </h1>
-        <p className="absolute top-[2350px] left-[396px] w-[127px] h-[27px] font-[Poppins] font-normal text-[17.69px] leading-[100%] tracking-normal text-[#045CB5] opacity-100">
-          {leaderboardPageContent.playerHandle}
-        </p>
-        <h1 className="absolute top-[2312px] left-[1589px] w-[33px] h-[17px] font-[Poppins] font-bold text-[11.55px] leading-[100%] tracking-normal text-white opacity-100">
-          {leaderboardPageContent.rankLabel}
-        </h1>
-        <h1 className="absolute top-[2323px] left-[1566px] w-[80px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal text-white opacity-100">
-          {leaderboardPageContent.listScore}
-        </h1>
-        <div className="absolute top-[2447px] left-[223px] w-[1479px] h-[143px] rounded-[24px] bg-[#00284E] opacity-100"></div>
-        <Image
-          src={leaderboardPageImages.avatars[2]}
-          alt={leaderboardPageContent.alts.avatar}
-          width={118}
-          height={117}
-          className="absolute top-[2460px] left-[239px] w-[118px] h-[117px] rounded-[18px] opacity-100"
-        />
-        <h1 className="absolute top-[2485px] left-[396px] w-[212px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] text-white tracking-normal opacity-100">
-          {leaderboardPageContent.playerName}
-        </h1>
-        <p className="absolute top-[2523px] left-[396px] w-[127px] h-[27px] font-[Poppins] font-normal text-[17.69px] leading-[100%] tracking-normal text-[#045CB5] opacity-100">
-          {leaderboardPageContent.playerHandle}
-        </p>
-        <h1 className="absolute top-[2487px] left-[1589px] w-[33px] h-[17px] font-[Poppins] font-bold text-[11.55px] leading-[100%] tracking-normal opacity-100 text-white">
-          {leaderboardPageContent.rankLabel}
-        </h1>
-        <h1 className="absolute top-[2498px] left-[1566px] w-[80px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal text-white opacity-100">
-          {leaderboardPageContent.listScore}
-        </h1>
-        <div className="absolute top-[2620px] left-[223px] w-[1479px] h-[143px] rounded-[24px] bg-[#00284E] opacity-100"></div>
+        <div className="absolute top-[2101px] left-[223px] flex w-[1479px] flex-col gap-[30px]">
+          {leaderboardRows.map((avatar, index) => (
+            <div
+              key={`${leaderboardPageContent.playerName}-${index}`}
+              className="flex h-[143px] w-[1479px] items-start justify-between rounded-[24px] bg-[#00284E] px-[16px] pt-[13px] opacity-100"
+            >
+              <div className="flex items-start gap-[39px]">
+                <Image
+                  src={avatar}
+                  alt={leaderboardPageContent.alts.avatar}
+                  width={118}
+                  height={117}
+                  className="h-[117px] w-[118px] rounded-[18px] opacity-100"
+                />
+                <div className="mt-[25px]">
+                  <h1 className="h-[48px] w-[212px] font-[Poppins] text-[31.86px] font-bold leading-[100%] tracking-normal text-white opacity-100">
+                    {leaderboardPageContent.playerName}
+                  </h1>
+                  <p className="h-[27px] w-[127px] font-[Poppins] text-[17.69px] font-normal leading-[100%] tracking-normal text-[#045CB5] opacity-100">
+                    {leaderboardPageContent.playerHandle}
+                  </p>
+                </div>
+              </div>
+              <div className="mr-[56px] mt-[28px] flex flex-col items-end">
+                <h1 className="mr-[24px] h-[17px] w-[33px] font-[Poppins] text-[11.55px] font-bold leading-[100%] tracking-normal text-white opacity-100">
+                  {leaderboardPageContent.rankLabel}
+                </h1>
+                <h1 className="h-[48px] w-[80px] font-[Poppins] text-[31.86px] font-bold leading-[100%] tracking-normal text-white opacity-100">
+                  {leaderboardPageContent.listScore}
+                </h1>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <Image
-        src={leaderboardPageImages.avatars[3]}
-        alt={leaderboardPageContent.alts.avatar}
-        width={118}
-        height={117}
-        className="absolute top-[2633px] left-[239px] w-[118px] h-[117px] rounded-[18px] opacity-100"
-      />
-      <h1 className="absolute top-[2658px] left-[396px] w-[212px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] text-white tracking-normal opacity-100">
-        {leaderboardPageContent.playerName}
-      </h1>
-      <p className="absolute top-[2696px] left-[396px] w-[127px] h-[27px] font-[Poppins] font-normal text-[17.69px] leading-[100%] tracking-normal text-[#045CB5] opacity-100">
-        {leaderboardPageContent.playerHandle}
-      </p>
-      <h1 className="absolute top-[2658px] left-[1589px] w-[33px] h-[17px] font-[Poppins] font-bold text-[11.55px] leading-[100%] tracking-normal opacity-100 text-white">
-        {leaderboardPageContent.rankLabel}
-      </h1>
-      <h1 className="absolute top-[2669px] left-[1566px] w-[80px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal text-white opacity-100">
-        {leaderboardPageContent.listScore}
-      </h1>
-      <div className="absolute top-[2793px] left-[223px] w-[1479px] h-[143px] rounded-[24px] bg-[#00284E] opacity-100"></div>
-      <Image
-        src={leaderboardPageImages.avatars[4]}
-        alt={leaderboardPageContent.alts.avatar}
-        width={118}
-        height={117}
-        className="absolute top-[2806px] left-[239px] w-[118px] h-[117px] rounded-[18px] opacity-100"
-      />
-      <h1 className="absolute top-[2831px] left-[396px] w-[212px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] text-white tracking-normal opacity-100">
-        {leaderboardPageContent.playerName}
-      </h1>
-      <p className="absolute top-[2869px] left-[396px] w-[127px] h-[27px] font-[Poppins] font-normal text-[17.69px] leading-[100%] tracking-normal text-[#045CB5] opacity-100">
-        {leaderboardPageContent.playerHandle}
-      </p>
-      <h1 className="absolute top-[2833px] left-[1589px] w-[33px] h-[17px] font-[Poppins] font-bold text-[11.55px] leading-[100%] tracking-normal opacity-100 text-white">
-        {leaderboardPageContent.rankLabel}
-      </h1>
-      <h1 className="absolute top-[2844px] left-[1566px] w-[80px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal text-white opacity-100">
-        {leaderboardPageContent.listScore}
-      </h1>
-      <div className="absolute top-[2966px] left-[223px] w-[1479px] h-[143px] rounded-[24px] bg-[#00284E] opacity-100"></div>
-      <Image
-        src={leaderboardPageImages.avatars[5]}
-        alt={leaderboardPageContent.alts.avatar}
-        width={118}
-        height={117}
-        className="w-[118px] h-[117px] absolute top-[2979px] left-[239px] rounded-[18px] opacity-100 rotate-0"
-      />
-      <h1 className="absolute top-[3004px] text-white left-[396px] w-[212px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal opacity-100">
-        {leaderboardPageContent.playerName}
-      </h1>
-      <p className="absolute top-[3045px] left-[396px] w-[127px] h-[27px] font-[Poppins] font-normal text-[17.69px] leading-[100%] tracking-normal text-[#045CB5] opacity-100">
-        {leaderboardPageContent.playerHandle}
-      </p>
-      <h1 className="absolute top-[3007px] left-[1589px] w-[33px] h-[17px] font-[Poppins] font-bold text-[11.55px] leading-[100%] tracking-normal opacity-100 text-white">
-        {leaderboardPageContent.rankLabel}
-      </h1>
-      <h1 className="absolute top-[3018px] left-[1566px] w-[80px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal text-white opacity-100">
-        {leaderboardPageContent.listScore}
-      </h1>
-      <div className="absolute top-[3139px] left-[223px] w-[1479px] h-[143px] rounded-[24px] bg-[#00284E] opacity-100"></div>
-      <Image
-        src={leaderboardPageImages.avatars[6]}
-        alt={leaderboardPageContent.alts.avatar}
-        width={118}
-        height={117}
-        className="absolute top-[3152px] left-[239px] w-[118px] h-[117px] rounded-[18px] opacity-100"
-      />
-      <h1 className="absolute top-[3174px] text-white left-[396px] w-[212px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal opacity-100">
-        {leaderboardPageContent.playerName}
-      </h1>
-      <p className="absolute top-[3215px] left-[396px] w-[127px] h-[27px] font-[Poppins] font-normal text-[17.69px] leading-[100%] tracking-normal text-[#045CB5] opacity-100">
-        {leaderboardPageContent.playerHandle}
-      </p>
-      <h1 className="absolute top-[3177px] left-[1589px] w-[33px] h-[17px] font-[Poppins] font-bold text-[11.55px] leading-[100%] tracking-normal opacity-100 text-white">
-        {leaderboardPageContent.rankLabel}
-      </h1>
-      <h1 className="absolute top-[3188px] left-[1566px] w-[80px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal text-white opacity-100">
-        {leaderboardPageContent.listScore}
-      </h1>
-      <div className="absolute top-[3312px] left-[223px] w-[1479px] h-[143px] rounded-[24px] bg-[#00284E] opacity-100"></div>
-      <Image
-        src={leaderboardPageImages.avatars[7]}
-        alt={leaderboardPageContent.alts.avatar}
-        width={118}
-        height={117}
-        className="absolute top-[3325px] left-[239px] w-[118px] h-[117px] rounded-[18px] opacity-100"
-      />
-      <h1 className="absolute top-[3350px] left-[396px] w-[212px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] text-white tracking-normal opacity-100">
-        {leaderboardPageContent.playerName}
-      </h1>
-      <p className="absolute top-[3391px] left-[396px] w-[127px] h-[27px] font-[Poppins] font-normal text-[17.69px] leading-[100%] tracking-normal text-[#045CB5] opacity-100">
-        {leaderboardPageContent.playerHandle}
-      </p>
-      <h1 className="absolute top-[3353px] left-[1589px] w-[33px] h-[17px] font-[Poppins] font-bold text-[11.55px] leading-[100%] tracking-normal opacity-100 text-white">
-        {leaderboardPageContent.rankLabel}
-      </h1>
-      <h1 className="absolute top-[3364px] left-[1566px] w-[80px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal text-white opacity-100">
-        {leaderboardPageContent.listScore}
-      </h1>
-      <div className="absolute top-[3485px] left-[223px] w-[1479px] h-[143px] rounded-[24px] bg-[#00284E] opacity-100"></div>
-      <Image
-        src={leaderboardPageImages.avatars[8]}
-        alt={leaderboardPageContent.alts.avatar}
-        width={118}
-        height={117}
-        className="w-[118px] h-[117px] absolute top-[3498px] left-[239px] rounded-[18px] opacity-100 rotate-0"
-      />
-      <h1 className="absolute top-[3523px] text-white left-[396px] w-[212px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal opacity-100">
-        {leaderboardPageContent.playerName}
-      </h1>
-      <p className="absolute top-[3564px] left-[396px] w-[127px] h-[27px] font-[Poppins] font-normal text-[17.69px] leading-[100%] tracking-normal text-[#045CB5] opacity-100">
-        {leaderboardPageContent.playerHandle}
-      </p>
-      <h1 className="absolute top-[3526px] left-[1589px] w-[33px] h-[17px] font-[Poppins] font-bold text-[11.55px] leading-[100%] tracking-normal opacity-100 text-white">
-        {leaderboardPageContent.rankLabel}
-      </h1>
-      <h1 className="absolute top-[3537px] left-[1566px] w-[80px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal text-white opacity-100">
-        {leaderboardPageContent.listScore}
-      </h1>
-      {/* <div className="absolute top-[3658px] left-[223px] w-[1479px] h-[143px] rounded-[24px] bg-[#00284E] opacity-100"></div>
-      <Image
-        src={secondmen}
-        alt="secondmen"
-        className="absolute top-[3671px] left-[239px] w-[118px] h-[117px] rounded-[18px] opacity-100"
-      />
-      <h1 className="absolute top-[3693px] text-white left-[396px] w-[212px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal opacity-100">
-        Simon Adam
-      </h1>
-      <p className="absolute top-[3734px] left-[396px] w-[127px] h-[27px] font-[Poppins] font-normal text-[17.69px] leading-[100%] tracking-normal text-[#045CB5] opacity-100">
-        @simonadam
-      </p>
-      <h1 className="absolute top-[3696px] left-[1589px] w-[33px] h-[17px] font-[Poppins] font-bold text-[11.55px] leading-[100%] tracking-normal opacity-100 text-white">
-        RANK
-      </h1>
-      <h1 className="absolute top-[3707px] left-[1566px] w-[80px] h-[48px] font-[Poppins] font-bold text-[31.86px] leading-[100%] tracking-normal text-white opacity-100">
-        4523
-      </h1> */}
       <XtEsportsBanner />
     </>
   );

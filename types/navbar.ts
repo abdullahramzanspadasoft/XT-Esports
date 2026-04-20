@@ -51,3 +51,21 @@ export type IconName =
   | "trophy"
   | "more"
   | "bell";
+
+export type NavbarLayoutItem = {
+  id: number;
+  label: string;
+  icon: string;
+};
+
+export type NavbarOption = {
+  label: string;
+  icon: string;
+  id?: number;
+};
+
+export type NavbarOptionInput = {
+  label: string;
+  icon?: string;
+  id?: number;
+};
